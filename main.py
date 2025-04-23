@@ -42,6 +42,8 @@ def MainRun():
         clearFileContent(PATHS[i])
         fetchAndSaveToFile(URLS[i], PATHS[i])
 
+        st.markdown("After scrapping")
+
         file_path = PATHS[i]
 
         with open(file_path, 'r', encoding='utf-8') as f:
