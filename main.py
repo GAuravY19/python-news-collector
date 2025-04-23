@@ -37,6 +37,7 @@ def clearFileContent(path):
 
 def MainRun():
     for i in range(len(URLS)):
+        st.markdown(f'**Scraping {NAMES[i]}**')
 
         clearFileContent(PATHS[i])
         fetchAndSaveToFile(URLS[i], PATHS[i])
