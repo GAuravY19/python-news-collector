@@ -14,6 +14,7 @@ def main(source:list):
 
     url = []
     for i in stqdm(source):
+        st.markdown(i)
         links = f'https://news.google.com/{i[2:]}'
         decoded_url = gnewsdecoder(links, interval=interval)
         url.append(decoded_url['decoded_url'])
