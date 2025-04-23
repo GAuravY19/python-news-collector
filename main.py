@@ -9,6 +9,7 @@ import streamlit as st
 from stqdm import stqdm
 
 def main(source:list):
+    st.markdown("Starting to clean the links")
     interval = 1
 
     url = []
@@ -65,13 +66,14 @@ def MainRun():
                 LINKS.append(j.get('href'))
                 TITLE.append(j.text)
 
+        st.markdown('After scapping links and texts')
+
         LINKS = main(LINKS[16:24])
+
+        st.markdown("After cleaing links")
 
         DATA = {'Headline' : TITLE[16:24],
                 'Links' : LINKS}
-
-        trim_front = file_path[5:]
-        file_name = trim_front[:-5]
 
         st.dataframe(pd.DataFrame(DATA))
 
