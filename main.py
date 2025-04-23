@@ -8,13 +8,11 @@ from googlenewsdecoder import gnewsdecoder
 import streamlit as st
 
 def main(source:list):
-    st.markdown("Starting to clean the links")
     interval = 1
 
     url = []
 
     for i in source:
-        st.markdown(i)
         links = f'https://news.google.com/{i[2:]}'
         decoded_url = gnewsdecoder(links, interval=interval)
         url.append(decoded_url['decoded_url'])
@@ -39,21 +37,14 @@ def clearFileContent(path):
 
 def MainRun():
     for i in range(len(URLS)):
-        st.markdown(f'**Scraping {NAMES[i]}**')
 
         clearFileContent(PATHS[i])
         fetchAndSaveToFile(URLS[i], PATHS[i])
-
-        st.markdown("After scrapping")
 
         file_path = PATHS[i]
 
         with open(file_path, 'r', encoding='utf-8') as f:
             content = f.read()
-
-        st.markdown(
-            'After reading scrapped data'
-        )
 
         soup = BeautifulSoup(content)
 
@@ -67,11 +58,7 @@ def MainRun():
                 LINKS.append(j.get('href'))
                 TITLE.append(j.text)
 
-        st.markdown('After scapping links and texts')
-
         LINKS = main(LINKS[16:24])
-
-        st.markdown("After cleaing links")
 
         DATA = {'Headline' : TITLE[16:24],
                 'Links' : LINKS}
