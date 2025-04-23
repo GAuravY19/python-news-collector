@@ -49,6 +49,10 @@ def MainRun():
         with open(file_path, 'r', encoding='utf-8') as f:
             content = f.read()
 
+        st.markdown(
+            'After reading scrapped data'
+        )
+
         soup = BeautifulSoup(content)
 
         all_a_tags = soup.find_all('a')
