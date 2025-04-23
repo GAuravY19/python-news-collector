@@ -6,14 +6,14 @@ from bs4 import BeautifulSoup
 import pandas as pd
 from googlenewsdecoder import gnewsdecoder
 import streamlit as st
-from stqdm import stqdm
 
 def main(source:list):
     st.markdown("Starting to clean the links")
     interval = 1
 
     url = []
-    for i in stqdm(source):
+
+    for i in source:
         st.markdown(i)
         links = f'https://news.google.com/{i[2:]}'
         decoded_url = gnewsdecoder(links, interval=interval)
