@@ -2,7 +2,6 @@ from urls import URLS
 from paths import PATHS
 from names import NAMES
 import requests
-from bs4 import BeautifulSoup
 import pandas as pd
 from googlenewsdecoder import gnewsdecoder
 import streamlit as st
