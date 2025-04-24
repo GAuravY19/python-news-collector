@@ -44,9 +44,9 @@ def MainRun():
                 LINKS.append(j.get('href'))
                 TITLE.append(j.text)
 
-        LINKS = main(LINKS[16:24])
+        LINKS = main(LINKS[16:])
 
-        DATA = {'Headline' : TITLE[16:24],
+        DATA = {'Headline' : TITLE[16:],
                 'Links' : LINKS}
 
         st.dataframe(pd.DataFrame(DATA))

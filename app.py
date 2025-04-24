@@ -1,7 +1,7 @@
 import streamlit as st
 import os
-from main import MainRun
-from names import NAMES
+from googlescrapper import MainRun
+from gurls.names import NAMES
 
 st.header('News Scrapper')
 
