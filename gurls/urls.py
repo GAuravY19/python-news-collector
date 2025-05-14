@@ -1,3 +1,4 @@
+NEW_PROD = 'https://news.google.com/search?q=New%20health%20insurance%20Product%20launch&hl=en-IN&gl=IN&ceid=IN%3Aen'
 URL_ADITYA = 'https://news.google.com/search?q=Aditya%20Birla%20Health%20Insurance%20Company%20when%3A7d&hl=en-IN&gl=IN&ceid=IN%3Aen'
 URL_CARE = 'https://news.google.com/search?q=care%20health%20insurance%20company%20limited%20when%3A7d&hl=en-IN&gl=IN&ceid=IN%3Aen'
 URL_MANIPAL = 'https://news.google.com/search?q=manipalcigna%20health%20insurance%20company%20limited%20mumbai%20when%3A7d&hl=en-IN&gl=IN&ceid=IN%3Aen'
@@ -28,7 +29,7 @@ URL_Oriental = 'https://news.google.com/search?q=The%20Oriental%20Insurance%20Co
 URL_Universal = 'https://news.google.com/search?q=Universal%20Sompo%20General%20Insurance%20Company%20Limited%20when%3A7d&hl=en-IN&gl=IN&ceid=IN%3Aen'
 URL_Zuno = 'https://news.google.com/search?q=Zuno%20General%20Insurance%20Limited%20when%3A7d&hl=en-IN&gl=IN&ceid=IN%3Aen'
 
-URLS = [URL_ADITYA, URL_CARE, URL_MANIPAL, URL_NIVA, URL_RELIANCE, URL_STAR, URL_ACKO, URL_BAJAJ, URL_CHOLA,
+URLS = [NEW_PROD, URL_ADITYA, URL_CARE, URL_MANIPAL, URL_NIVA, URL_RELIANCE, URL_STAR, URL_ACKO, URL_BAJAJ, URL_CHOLA,
         URL_FUTURE, URL_GO, URL_HDFC, URL_ICICI, URL_IFFCO, URL_Kotak, URL_Kshema, URL_Liberty, URL_National,
         URL_Magma, URL_Raheja, URL_Royal, URL_Shriram, URL_SBI, URL_Tata, URL_The_New_India, URL_Oriental,
         URL_Universal, URL_Zuno]

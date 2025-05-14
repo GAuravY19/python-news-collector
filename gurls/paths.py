@@ -1,3 +1,4 @@
+PATH_NEW_PROD = 'google_data/new.html'
 PATH_ADITYA = 'google_data/aditya.html'
 PATH_CARE = 'google_data/care.html'
 PATH_MANIPAL = 'google_data/manipal.html'
