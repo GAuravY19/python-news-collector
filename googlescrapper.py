@@ -1,56 +1,60 @@
-from gurls.urls import URLS
-from gurls.paths import PATHS
+from itertools import count
 from gurls.names import NAMES
-from bs4 import BeautifulSoup
+from gnews import GNews
 import pandas as pd
-from googlenewsdecoder import gnewsdecoder
 import streamlit as st
-from utils import fetchAndSaveToFile, clearFileContent
+from datetime import datetime, timedelta
 
-def main(source:list):
-    interval = 1
+# def main(source:list):
+#     interval = 1
 
-    url = []
+#     url = []
 
-    for i in source:
-        links = f'https://news.google.com/{i[2:]}'
-        decoded_url = gnewsdecoder(links, interval=interval)
-        url.append(decoded_url['decoded_url'])
+#     for i in source:
+#         links = f'https://news.google.com/{i[2:]}'
+#         decoded_url = gnewsdecoder(links, interval=interval)
+#         url.append(decoded_url['decoded_url'])
 
-    return url
+#     return url
 
+def StartDate(months):
+    days = months * 30
+    start_date = datetime.today().date() - timedelta(days=days)
+    return start_date
 
 def MainRun():
-    for i in range(len(URLS)):
+    for i in range(len(NAMES)):
         st.markdown(f'**Scraping {NAMES[i]}**')
+        # print(f'**Scraping {NAMES[i]}**')
 
-        clearFileContent(PATHS[i])
-        fetchAndSaveToFile(URLS[i], PATHS[i])
 
-        file_path = PATHS[i]
-
-        with open(file_path, 'r', encoding='utf-8') as f:
-            content = f.read()
-
-        soup = BeautifulSoup(content)
-
-        all_a_tags = soup.find_all('a')
+        google_news = GNews(
+            language='en',
+            country='IN',
+            start_date = StartDate(3),
+            end_date=datetime.today().date()
+        )
 
         TITLE = []
         LINKS = []
+        PUBLISH_DATE = []
 
-        for j in all_a_tags:
-            if j.get_text(strip=True):
-                LINKS.append(j.get('href'))
-                TITLE.append(j.text)
+        response = google_news.get_news(NAMES[i])
 
-        LINKS = main(LINKS[16:])
+        for i in response:
+            TITLE.append(i['title'])
+            PUBLISH_DATE.append(i['published date'])
+            LINKS.append(i['url'])
 
-        DATA = {'Headline' : TITLE[16:],
+        DATA = {'Headline' : TITLE,
+                "publish Date": PUBLISH_DATE,
                 'Links' : LINKS}
 
         st.dataframe(pd.DataFrame(DATA))
+        # print(pd.DataFrame(DATA))
 
 
-if __name__ == "__main__":
-    MainRun()
+# if __name__ == "__main__":
+#     MainRun(months=months)
+
+# MainRun(months)

@@ -28,7 +28,7 @@ NAMES_United = 'United India Insurance Company Limited'
 NAMES_Universal = 'Universal Sompo General Insurance Company Limited'
 NAMES_Zuno = 'Zuno General Insurance Limited'
 
-NAMES = ['New Product Launches',
+NAMES = ['New health insurance Product Launches',
          NAMES_Aditya,
          NAMES_Care,
          NAMES_ManipalCigna,

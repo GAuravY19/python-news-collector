@@ -1,8 +1,4 @@
 pandas
-requests
 numpy
-python-dotenv
-tqdm
-beautifulsoup4
-googlenewsdecoder
 streamlit
+gnews
