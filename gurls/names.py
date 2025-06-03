@@ -29,6 +29,11 @@ NAMES_Universal = 'Universal Sompo General Insurance Company Limited'
 NAMES_Zuno = 'Zuno General Insurance Limited'
 
 NAMES = ['New health insurance Product Launches',
+         "New Motor insurance product Launches",
+         "New Fire insurance product Launches",
+         "New Marine insurance product launches",
+         "New Engineering insurance product launches",
+         "New General Insurance product Launches",
          NAMES_Aditya,
          NAMES_Care,
          NAMES_ManipalCigna,
